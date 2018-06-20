@@ -1,5 +1,5 @@
 import {} from 'react-redux';
-import {SET_STACK, LOAD_STACKS} from "./types";
+import {SET_STACK, LOAD_STACKS, ADD_STACK} from "./types";
 
 export const setStack = (stack) => {
     return {
@@ -14,4 +14,11 @@ export const loadStacks = stacks => {
         stacks
     }
 };
+
+export const addStack = stack => {
+    return {
+        type: ADD_STACK,
+        stack
+    }
+}
 
