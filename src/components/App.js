@@ -29,8 +29,8 @@ class App extends Component {
 
     }
     clear() {
-        delete_cookie(cookie_key);
         this.setState({notes: []});
+        delete_cookie(cookie_key);
     }
 
     render() {
@@ -41,7 +41,7 @@ class App extends Component {
                     <FormControl onChange={event => {
                         this.setState({text: event.target.value})
                     }}/>
-                    <Button onClick={this.submit}>Submit</Button>
+                    <Button id="submitNotes" onClick={this.submit}>Submit</Button>
                 </Form>
                 {
                     this.state.notes.map((note, index) => {
@@ -51,7 +51,7 @@ class App extends Component {
                     })
                 }
                 <hr />
-                <Button onClick={this.clear}>Clear Notes</Button>
+                <Button id="clearNotes" onClick={this.clear}>Clear Notes</Button>
             </div>
         )
     }
