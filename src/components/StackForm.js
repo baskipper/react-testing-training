@@ -6,6 +6,8 @@ class StackForm extends Component {
     constructor(props) {
         super(props);
         this.addCard = this.addCard.bind(this);
+        this.updateCard = this.updateCard.bind(this);
+        this.addStack = this.addStack.bind(this);
     }
 
     state = {
@@ -14,13 +16,17 @@ class StackForm extends Component {
     };
 
     addCard() {
-        console.log('add card');
-        console.log(this.state);
         const newCard = {id: this.state.cards.length, prompt: '', answer: ''};
 
-        console.log(this.state);
         this.setState({cards: [...this.state.cards, newCard]});
 
+    }
+
+    updateCard(value, index, field)
+    {
+        let items = [...this.state.cards];
+        items[index][field] = value;
+        this.setState({cards: items})
     }
 
     render() {
@@ -41,13 +47,41 @@ class StackForm extends Component {
                             Title:
                         </ControlLabel>
                         <br/>
-                        <FormControl/>
+                        <FormControl onChange={event => this.setState({title: event.target.value})}/>
                     </FormGroup>
+                    {
+                        this.state.cards.map((card, index) => {
+                            return (
+                                <div key={card.id}>
+                                    <br/>
+                                    <FormGroup>
+                                        <ControlLabel>
+                                            Prompt:
+                                        </ControlLabel>
+                                        {' '}
+                                        <FormControl
+                                            onChange={(event) => this.updateCard(event.target.value, index, 'prompt')}
+                                        />
+                                        {' '}
+                                        <ControlLabel>
+                                            Answer
+                                        </ControlLabel>
+                                        <FormControl
+                                            onChange={(event) => this.updateCard(event.target.value, index, 'answer')}
+                                        />
+                                    </FormGroup>
+
+                                </div>
+                            )
+                        })
+                    }
                 </Form>
                 <br/>
                 <Button onClick={this.addCard}>
                     Add Card
                 </Button>
+                {" "}
+                <Button onClick={() => this.addStack}> Save Stack</Button>
             </div>
         )
     }
