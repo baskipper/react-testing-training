@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
+import initialStacks from '../data/stacks.json';
 import {setStack, loadStacks} from '../actions';
 
 class StackList extends Component {
 
     componentDidMount() {
         const {stacks, loadStacks} = this.props;
-        if (stacks.length === 0) {
-            loadStacks(stacks)
+        if(stacks.length === 0) {
+            loadStacks(initialStacks)
         }
     }
 
@@ -34,7 +35,7 @@ class StackList extends Component {
 }
 
 const mapStateToProps = state => {
-    return {stacks: state.stacks};
+    return { stacks: state.stacks};
 };
 
 
