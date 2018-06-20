@@ -37,6 +37,10 @@ describe("App", () => {
             })
         });
 
+        afterEach(() => {
+            app.find('#clearNotes').at(0).simulate('click');
+        });
+
         it('should update the text in state', () => {
             expect(app.state().text).toEqual(value);
         });
@@ -50,6 +54,19 @@ describe("App", () => {
 
             it('should add the new note to state', () => {
                 expect(app.state().notes[0]).toEqual(value)
+            });
+
+            describe('and remounting the component', () => {
+                let app2;
+
+                beforeEach(() => {
+                    app2 = mount(<App />);
+                });
+
+                it('should have stored note cookies', () => {
+                    expect(app2.state().notes).toEqual([value]);
+                });
+
             });
 
             describe('and clicking the clear button', () => {
