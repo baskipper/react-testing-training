@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {createStore} from 'redux';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import {Provider} from 'react-redux';
-import {stack as rootReducer} from "./reducers";
+import rootReducer from "./reducers";
 import App from "./components/App";
 import Stack from "./components/Stack"
 import './index.css';

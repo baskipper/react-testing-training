@@ -30,7 +30,7 @@ class Stack extends Component {
 }
 
 const mapStateToProps = state => {
-    const {stack} = state;
+    const {stack} = state.stack;
     return {stack};
 };
 
