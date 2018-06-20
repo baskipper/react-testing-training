@@ -8,7 +8,7 @@ import App from "./components/App";
 import Stack from "./components/Stack"
 import {setStack} from "./actions";
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, {}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 store.subscribe(() => {
 
 });

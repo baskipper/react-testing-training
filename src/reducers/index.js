@@ -6,7 +6,7 @@ const INITIAL_STATE = {};
 export const stack = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case SET_STACK:
-            return [...state, action.stack];
+            return {...state, stack: action.stack};
         default:
             return state;
     }
