@@ -80,25 +80,6 @@ describe("StackForm", () => {
             it("should update the prompt in the state", () => {
                 expect(stack.state().cards[0].answer).toEqual(changeAnswer)
             });
-
-
         });
-
     });
-
-
-
-    it("should", () => {
-
-    });
-    it("should", () => {
-
-    });
-    it("should", () => {
-
-    });
-    it("should", () => {
-
-    });
-
 });
