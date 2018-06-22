@@ -10,7 +10,7 @@ describe('App', () => {
     });
 
     it('renders the stack list', () => {
-       expect(app.find('Connect(StackList)').exists()).toBe(true);
+        expect(app.find('Connect(StackList)').exists()).toBe(true);
     });
 
     it('renders a link to create new stacks', () => {
