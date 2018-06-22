@@ -7,8 +7,6 @@ const props = {stack};
 
 describe("Stack", () => {
 
-
-
     const stack = shallow(<Stack {...props} />);
 
     it("should render the title", () => {
@@ -22,31 +20,4 @@ describe("Stack", () => {
     it("should render the correct number of cards", () => {
         expect(stack.find('Card').length).toEqual(props.stack.cards.length)
     });
-
-    it("should", () => {
-
-    });
-
-    it("should", () => {
-
-    });
-    it("should", () => {
-
-    });
-    it("should", () => {
-
-    });
-    it("should", () => {
-
-    });
-    it("should", () => {
-
-    });
-    it("should", () => {
-
-    });
-    it("should", () => {
-
-    });
-
 });
