@@ -1,4 +1,3 @@
-import {} from 'react-redux';
 import {SET_STACK, LOAD_STACKS, ADD_STACK} from "./types";
 
 export const setStack = (stack) => {
@@ -20,5 +19,4 @@ export const addStack = stack => {
         type: ADD_STACK,
         stack
     }
-}
-
+};
