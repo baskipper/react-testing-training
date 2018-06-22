@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import {Form, FormGroup, FormControl, ControlLabel, Button} from 'react-bootstrap';
 import {addStack} from "../actions";
 
-class StackForm extends Component {
+export class StackForm extends Component {
     constructor(props) {
         super(props);
         this.addCard = this.addCard.bind(this);
@@ -69,7 +69,7 @@ class StackForm extends Component {
                                         />
                                         {' '}
                                         <ControlLabel>
-                                            Answer
+                                            Answer:
                                         </ControlLabel>
                                         <FormControl
                                             onChange={(event) => this.updateCard(event.target.value, index, 'answer')}
@@ -86,7 +86,7 @@ class StackForm extends Component {
                     Add Card
                 </Button>
                 {" "}
-                <Button onClick={this.addNewStack}> Save Stack</Button>
+                <Button onClick={this.addNewStack}>Save Stack</Button>
             </div>
         )
     }

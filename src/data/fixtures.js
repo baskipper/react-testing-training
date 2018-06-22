@@ -10,3 +10,5 @@ export const stack = {
         ]
 
 };
+
+export const stacks = [stack];
