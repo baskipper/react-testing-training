@@ -15,8 +15,9 @@ class Clue extends Component {
                     {question}
                 </h5>
                 <hr/>
-                <h5 className={this.state.reveal ? 'text-revealed' : 'text-hidden'}
-                dangerouslySetInnerHTML={{__html: answer}}/>
+                <h5 className={this.state.reveal ? 'text-revealed' : 'text-hidden'}>
+                    {answer}
+                </h5>
 
             </div>
         )
