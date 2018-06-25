@@ -15,7 +15,7 @@ describe("root reducer", () => {
 
     it('should set categories', () => {
         expect(rootReducer({}, {type: SET_CATEGORIES, categories})).toEqual({categories, category: {}})
-    })
+    });
 
     it('should pick a category', () => {
         expect(rootReducer({}, {type: PICK_CATEGORY, category})).toEqual({categories: [], category})
