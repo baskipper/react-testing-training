@@ -19,4 +19,9 @@ export const clue = {
         answer: 'a one',
         value: 200
     }
-}
+};
+
+export const clues = [
+    clue.clue,
+    { id: 1, question: 'q two', answer: 'a two', value: 500}
+]
